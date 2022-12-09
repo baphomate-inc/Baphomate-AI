@@ -1,0 +1,59 @@
+canvas {
+  background-color: lightgray;
+  border: 5px solid blue;
+  transition: all 0.3s;
+}
+
+canvas:hover {
+  background-color: transparent;
+  border-color: lightgray;
+  transform: scale(1.2);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+input {
+  padding: 5px 10px;
+  border: solid black;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+    border-color: red;
+  }
+  25% {
+    color: yellow;
+    border-color: yellow;
+  }
+  50% {
+    color: greenyellow;
+    border-color: greenyellow;
+  }
+  75% {
+    color: blue;
+    border-color: blue;
+  }
+  100% {
+    color: blueviolet;
+    border-color: blue;
+    
+  }
+}
+
+canvas {
+  animation: rainbow 5s linear infinite 0s;
+}

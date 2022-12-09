@@ -1,0 +1,14 @@
+.wp {
+    background: dimgray;
+    border: solid 3px black;
+    border-radius: 5px;
+    margin: 0;
+    margin-top: 30%;
+}
+
+.borin {
+    background: white;
+    color: gray;
+    border: solid 2px black;
+    border-radius: 5px;
+}

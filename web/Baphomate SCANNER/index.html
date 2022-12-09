@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="kira.css">
+  <title>BAPHOMATE SCANNER</title>
+</head>
+
+<body>
+    <div class="wp">
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center">
+    
+    <canvas width="300" height="300" style="border: 5px solid black" id="canvas"></canvas>
+    <br>
+    <label>link website: <small><i>*enter untuk submit</i></small></label>
+    <input class="borin" placeholder="contoh: google.com" id="qrInput" onchange="generateQR()">
+    <br>
+  </div>
+  </div>
+  <script src="node_modules/qrcode/build/qrcode.js"></script>
+  <script>
+    function generateQR() {
+      let canvas = document.getElementById("canvas")
+      let qrInput = document.getElementById("qrInput")
+      QRCode.toCanvas(canvas, qrInput.value, (err) => {
+        if (err) console.error(err)
+        console.log('scan berhasil!')
+      }) 
+    }
+  </script>
+  
+ </body> 
+ </html>
