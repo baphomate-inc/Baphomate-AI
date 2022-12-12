@@ -54,12 +54,12 @@ main(){
         echo -e """
             
         $def  +--------------------------+
-        $red┌─$def|$cyn  Welcole To Baphomate AI$def |
+        $red┌─$def|$cyn  Welcole To Baphomate.AI$def |
         $red│$def +--------------------------+
         $red│
         $red├──$def • Author     :$grn Kirasinigami 
-        $red├──$def • Contributor:$grn 4Yourpage 
-        $red├──$def • Project    :$ylw Baphomate AI 
+        $red├──$def • Contributor:$grn 4Yourpage_
+        $red├──$def • Project    :$ylw Baphomate.AI 
         $red├──$def • Version    :$red 1.0.1$def stable CLI 
         $red├──$def • Lisence    :$ded CCO 1.0 Universal 
         $red├────────────────────────────────────•
