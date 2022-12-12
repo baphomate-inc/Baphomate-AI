@@ -130,7 +130,7 @@ main(){
     elif [[ $c == 0 ]]; then
         clear
         sleep 1
-        echo -e "$ylw Thank you for interacting on Baphonate AI"
+        echo -e "$ylw Thank you for interacting on Baphomate.AI"
         sleep 2 
         xdg-open https://baphomate.rf.gd
         exit
