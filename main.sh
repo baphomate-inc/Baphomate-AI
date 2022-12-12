@@ -19,6 +19,8 @@ main(){
         echo -e "$ylw [*] Installing packages..."
         sleep 2
         pkg update -y && pkg upgrade -y
+        pkg install -y python 
+        pip install requets 
         bash main.sh
     } #../done installer
     #..webapp
