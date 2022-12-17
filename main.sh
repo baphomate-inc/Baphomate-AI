@@ -20,7 +20,8 @@ main(){
         sleep 2
         pkg update -y && pkg upgrade -y
         pkg install -y python 
-        pip install requets 
+        pip install requests
+        pip install mechanize 
         bash main.sh
     } #../done installer
     #..webapp
@@ -34,16 +35,17 @@ main(){
         $red│$def +--------------------------+
         $red│
         $red├──$def • Author     :$grn Kirasinigami 
-        $red├──$def • Contributor:$grn 4Yourpage_
-        $red├──$def • Project    :$ylw Baphomate.AI 
+        $red├──$def • Contributor:$grn 4Yourpage 
+        $red├──$def • Project    :$ylw Baphomate AI 
         $red├──$def • Version    :$red 1.0.1$def stable CLI 
         $red├──$def • Lisence    :$ded CCO 1.0 Universal 
         $red├────────────────────────────────────•
         $red│
         $red├──[$def MENU WEBAPP$red ]
         $red│
-        $red├──•$def 1. Web Scanner QR code 
-        $red├──•$def 2. Web Cam test (coming soon)
+        $red├──•$def 1. Web QR code 
+        $red├──•$def 2. Web Bot (Beta)
+        $red├──•$def 3. Web Cam test (coming soon)
         $red│
         $red└──╼•$def 0.back 
         
@@ -54,12 +56,12 @@ main(){
         echo -e """
             
         $def  +--------------------------+
-        $red┌─$def|$cyn  Welcole To Baphomate.AI$def |
+        $red┌─$def|$cyn  Welcole To Baphomate AI$def |
         $red│$def +--------------------------+
         $red│
         $red├──$def • Author     :$grn Kirasinigami 
-        $red├──$def • Contributor:$grn 4Yourpage_
-        $red├──$def • Project    :$ylw Baphomate.AI 
+        $red├──$def • Contributor:$grn 4Yourpage 
+        $red├──$def • Project    :$ylw Baphomate AI 
         $red├──$def • Version    :$red 1.0.1$def stable CLI 
         $red├──$def • Lisence    :$ded CCO 1.0 Universal 
         $red├────────────────────────────────────•
@@ -81,10 +83,10 @@ main(){
     #../logic
     if [[ $c == 1 ]]; then 
         install
-    elif [[ $c == 2 ]]; then
+    elif [[ $c == 2 ]]; then #//webapp
         webapp
         read -p "[#]Bap/Webapp> " web; #../shell cmd webapp
-        if [[ $web == 1 ]]; then
+        if [[ $web == 1 ]]; then #../web qr code 
            echo -e "$grn[*] Setup webapp..."
            sleep 1
            echo -e "$grn[*] Running server ..."
@@ -95,14 +97,32 @@ main(){
            +---------------------------------+
            host: localhost
            port: 8080
-           link: http://localhost:8080/web/BaphomateSCANNER/
+           link: http://localhost:8080/web/QRCode/
            ____________________________________
            note: copy the link localhost and paste it in the browser
            CTRL + c to stop 
            """
            python -m http.server 8080
-           bash main.sh
-        elif [[ $web == 2 ]]; then 
+           bash main.sh #..done
+        elif [[ $web == 2 ]]; then #../ web bot beta
+            echo -e "$grn[*] Setup webapp..."
+            sleep 1
+            echo -e "$grn[*] Running server ..."
+            sleep 2 
+            echo -e """
+            +---------------------------------+
+            | Server running by python server |
+            +---------------------------------+
+            host: localhost
+            port: 8080
+            link: http://localhost:8080/web/BaphomateBot/
+            ____________________________________
+            note: copy the link localhost and paste it in the browser
+            CTRL + c to stop 
+            """
+            python -m http.server 8080
+            bash main.sh #..done web bot
+        elif [[ $web == 3 ]]; then #../web cam test
             echo -e "$ylw(?) This program is currently being developed$def"
             read -p "[ENTER TO BACK]"
             bash main.sh
@@ -113,13 +133,16 @@ main(){
             sleep 2
             bash main.sh
         fi #../done
+       
         
-    elif [[ $c == 3 ]]; then
-        echo -e "$ylw(?) This program is currently being developed$def"
-        read -p "[ENTER TO BACK]"
-        bash main.sh
+    elif [[ $c == 3 ]]; then #..//cliapp
+       bash cli/cli.main.sh
     elif [[ $c == 4 ]]; then 
         git pull 
+        clear 
+        echo -e "$grn [✓] Update successfull..."
+        sleep 1
+        bash main.sh
     elif [[ $c == 5 ]]; then 
         xdg-open https://wa.me/+6285759669252
         sleep 1
@@ -130,7 +153,7 @@ main(){
     elif [[ $c == 0 ]]; then
         clear
         sleep 1
-        echo -e "$ylw Thank you for interacting on Baphomate.AI"
+        echo -e "$ylw Thank you for interacting on Baphonate AI"
         sleep 2 
         xdg-open https://baphomate.rf.gd
         exit
