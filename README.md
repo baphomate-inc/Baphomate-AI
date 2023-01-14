@@ -8,3 +8,4 @@ Several features to try have been prepared
 -Web QR Code
 -Web Baphomate Bot
 -Materi in CLI
+-Toolkit
